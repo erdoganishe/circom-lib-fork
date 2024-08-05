@@ -1,5 +1,31 @@
 pragma circom  2.1.8;
 
+include "../../libs/circom-ecdsa-p256/circuits/p256.circom";
+include "../../libs/circom-ecdsa-p256/circuits/p256_func.circom";
+
+
+
+template GetGenerator(n, k){
+    assert ((n == 43) && (k == 6));
+
+    signal output out[2][6];
+
+    //hardcoded generator
+    out[0][0] <== 1399498261142;
+    out[0][1] <== 5937592964135;
+    out[0][2] <== 2044638659767;
+    out[0][3] <== 3791144493177;
+    out[0][4] <== 3041449184206;
+    out[0][5] <== 919922271682;
+    out[1][0] <== 447611884021;
+    out[1][1] <== 6785408267976;
+    out[1][2] <== 752572259756;
+    out[1][3] <== 6207268441867;
+    out[1][4] <== 1820960812670;
+    out[1][5] <== 686230455804;
+
+}
+
 template SinatureVerify() {
     signal input sig[2][6];
     signal input pubkey[2][6];
