@@ -51,6 +51,9 @@ const config: HardhatUserConfig = {
     alwaysGenerateOverloads: true,
     discriminateTypes: true,
   },
+  zkit: {
+    nativeCompiler: true,
+  },
 };
 
 export default config;
